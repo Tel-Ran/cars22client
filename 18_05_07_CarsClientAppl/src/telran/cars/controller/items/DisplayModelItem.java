@@ -16,7 +16,7 @@ public class DisplayModelItem extends CarsItem {
 
 	@Override
 	public void action() {
-		String modelName=inputOutput.getString("Enter model name",getExistingModels());
+		String modelName=inputOutput.getString("Enter model name");
 		inputOutput.displayLine(company.getModel(modelName));
 
 	}

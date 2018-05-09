@@ -15,8 +15,9 @@ public class CarsConsoleApplication {
 	static IRentCompany company;
 	private static String HOST_NAME="localhost";
 public static void main(String[] args) throws Exception{
-	Socket socket=new Socket(HOST_NAME, CarsApiConstants.PORT);
-	company=new RentCompanyTcpProxy(socket);
+	
+	String url=args.length==0?"http://localhost:8080/":args[0];
+	company=new RentCompanyWebProxy(url);
 	ArrayList<Item> items=getItemsMain();
 	
 	
